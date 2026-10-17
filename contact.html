@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#232C27" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Contact — Adam Harith J</title>
+    <meta
+      name="description"
+      content="Get in touch with Adam Harith J, a computer networks student in Malaysia, about projects and internships."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      window.setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove("js");
+      }, 2500);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="wordmark" href="index.html">adam harith j</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          Menu
+          <span class="nav__toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav__menu" id="nav-menu">
+          <nav aria-label="Primary">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="projects.html">Work</a></li>
+              <li><a class="nav__link" href="about.html">About</a></li>
+              <li>
+                <a class="nav__link" href="contact.html" aria-current="page"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <a class="btn btn--accent btn--sm nav__cta" href="contact.html">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container" data-reveal>
+          <p class="eyebrow">Contact / Direct</p>
+          <h1 class="hero__title">Get in touch.</h1>
+          <p class="hero__lede">
+            Have a project, a role, or a question? Email is best — I reply
+            within a day or two.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-card" data-reveal>
+            <p class="eyebrow">Email</p>
+            <a class="contact-card__email" href="mailto:adamhjumain@gmail.com"
+              >adamhjumain@gmail.com</a
+            >
+            <div class="contact-card__actions">
+              <a class="btn btn--ground" href="mailto:adamhjumain@gmail.com">
+                Open mail app
+              </a>
+              <button
+                class="btn btn--outline-ink btn--sm"
+                type="button"
+                data-copy="adamhjumain@gmail.com"
+              >
+                <span data-copy-label aria-live="polite">Copy email</span>
+              </button>
+            </div>
+            <p class="contact-card__note">
+              No form — a plain email reaches me.
+            </p>
+          </div>
+
+          <dl class="contact__rows" data-reveal>
+            <div class="contact__row">
+              <dt>Phone</dt>
+              <dd>+60 18-310 8478</dd>
+            </div>
+            <div class="contact__row">
+              <dt>Location</dt>
+              <dd>Petaling Jaya, Selangor, Malaysia</dd>
+            </div>
+            <div class="contact__row">
+              <dt>GitHub</dt>
+              <dd><a href="https://github.com/adamnymy">github.com/adamnymy</a></dd>
+            </div>
+            <div class="contact__row">
+              <dt>LinkedIn</dt>
+              <dd>
+                <a href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+                  >linkedin.com/in/adam-harith-jumain-287547369</a
+                >
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div class="container">
+          <div class="contact-band__panel" data-reveal>
+            <p class="eyebrow">Elsewhere</p>
+            <h2 class="contact-band__title">Prefer code?</h2>
+            <p>
+              Most of what I build lives on GitHub — source, commits, and the
+              small decisions in between.
+            </p>
+            <div class="contact-band__actions">
+              <a
+                class="btn btn--ground"
+                href="https://github.com/adamnymy"
+                target="_blank"
+                rel="noopener"
+              >
+                Visit GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="container foot__inner">
+        <div class="foot__brand">
+          <span class="wordmark">adam harith j</span>
+          <p>Computer networks student · Petaling Jaya, Malaysia</p>
+        </div>
+        <nav class="foot__links" aria-label="Footer">
+          <a class="foot__link" href="https://github.com/adamnymy">GitHub</a>
+          <a
+            class="foot__link"
+            href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+            >LinkedIn</a
+          >
+          <a class="foot__link" href="contact.html">Email</a>
+        </nav>
+        <p class="foot__meta">© <span data-year>2026</span> Adam Harith J</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

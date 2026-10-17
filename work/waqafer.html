@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#232C27" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <title>Waqafer — Adam Harith J</title>
+    <meta
+      name="description"
+      content="Case study: Waqafer, a Flutter prayer companion app built during an internship at FELDA."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      window.setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove("js");
+      }, 2500);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="wordmark" href="../index.html">adam harith j</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          Menu
+          <span class="nav__toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav__menu" id="nav-menu">
+          <nav aria-label="Primary">
+            <ul class="nav__links">
+              <li>
+                <a class="nav__link" href="../projects.html" aria-current="page"
+                  >Work</a
+                >
+              </li>
+              <li><a class="nav__link" href="../about.html">About</a></li>
+              <li><a class="nav__link" href="../contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn--accent btn--sm nav__cta" href="../contact.html">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="case">
+        <div class="container">
+          <p class="backline">
+            <a class="link-arrow" href="../projects.html">
+              <span aria-hidden="true">←</span> All work
+            </a>
+          </p>
+
+          <header class="case__head" data-reveal>
+            <p class="eyebrow">2025 — 2026 · Mobile · FELDA internship</p>
+            <h1 class="case__title">Waqafer</h1>
+          </header>
+
+          <figure class="case__media" data-reveal>
+            <img
+              src="../assets/work/waqafer.svg"
+              alt="Placeholder artwork for Waqafer"
+              width="800"
+              height="500"
+            />
+          </figure>
+
+          <dl class="facts panel-bone facts--case" data-reveal>
+            <div class="fact">
+              <dt>Role</dt>
+              <dd>Mobile app developer (intern) — Flutter implementation</dd>
+            </div>
+            <div class="fact">
+              <dt>Stack</dt>
+              <dd>Flutter · Dart · Google Maps</dd>
+            </div>
+            <div class="fact">
+              <dt>Context</dt>
+              <dd>Internship at FELDA, Sep 2025 – Feb 2026</dd>
+            </div>
+            <div class="fact">
+              <dt>Source</dt>
+              <dd>
+                <a
+                  href="https://github.com/adamnymy/waqafer"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/adamnymy/waqafer</a
+                >
+              </dd>
+            </div>
+            <div class="fact">
+              <dt>Release</dt>
+              <dd>
+                <a
+                  href="https://play.google.com/store/apps/details?id=app.waqaffelda.waqafer"
+                  target="_blank"
+                  rel="noopener"
+                  >Google Play</a
+                >
+              </dd>
+            </div>
+          </dl>
+
+          <div class="case__sections">
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">01</span>
+                <h2>Problem</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  Daily Muslim practice scatters across several apps: prayer
+                  times in one, qiblah in another, Quran in a third. FELDA needed
+                  one companion app for its community that covers the routine —
+                  prayer scheduling, direction-finding, and Islamic content.
+                </p>
+              </div>
+            </section>
+
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">02</span>
+                <h2>Approach</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  I built the app in Flutter with Dart: <strong>prayer
+                  times</strong>, a <strong>qiblah</strong> compass,
+                  <strong>nearby mosques</strong> on Google Maps, plus
+                  <strong>Quran and Hadith</strong> reading and
+                  <strong>waqf</strong> features. My focus was making the daily
+                  loop — check time, find direction, read — quick and legible in
+                  one place.
+                </p>
+              </div>
+            </section>
+
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">03</span>
+                <h2>Outcome</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  Waqafer is published on <strong>Google Play</strong> — my first
+                  production mobile release, built through the full internship
+                  cycle from feature work to store delivery.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <nav class="case__nav" aria-label="Case navigation">
+            <a class="case__nav-link" href="brs.html">
+              <span>Previous case</span>
+              <strong>← Barbershop Reservation System</strong>
+            </a>
+            <a class="case__nav-link case__nav-link--next" href="pretzel.html">
+              <span>Next case</span>
+              <strong>Pretzel →</strong>
+            </a>
+          </nav>
+        </div>
+      </article>
+    </main>
+
+    <footer class="foot">
+      <div class="container foot__inner">
+        <div class="foot__brand">
+          <span class="wordmark">adam harith j</span>
+          <p>Computer networks student · Petaling Jaya, Malaysia</p>
+        </div>
+        <nav class="foot__links" aria-label="Footer">
+          <a class="foot__link" href="https://github.com/adamnymy">GitHub</a>
+          <a
+            class="foot__link"
+            href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+            >LinkedIn</a
+          >
+          <a class="foot__link" href="../contact.html">Email</a>
+        </nav>
+        <p class="foot__meta">© <span data-year>2026</span> Adam Harith J</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

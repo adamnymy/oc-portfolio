@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#232C27" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>Adam Harith J — Computer Networks Student</title>
+    <meta
+      name="description"
+      content="Selected work by Adam Harith J, a computer networks student building web and mobile applications."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      window.setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove("js");
+      }, 2500);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="wordmark" href="index.html">adam harith j</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          Menu
+          <span class="nav__toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav__menu" id="nav-menu">
+          <nav aria-label="Primary">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="projects.html">Work</a></li>
+              <li><a class="nav__link" href="about.html">About</a></li>
+              <li><a class="nav__link" href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn--accent btn--sm nav__cta" href="contact.html">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div data-reveal>
+            <p class="status">
+              <span class="status__dot" aria-hidden="true"></span>
+              Open to internships — 2026
+            </p>
+            <h1 class="hero__title">
+              I build <span class="hero__mark">working software</span>, end to
+              end.
+            </h1>
+            <div class="hero__lede prose">
+              <p>
+                I’m Adam Harith J, a computer networks student at UiTM Jasin. I
+                build <strong>web</strong> and <strong>mobile</strong> apps — a
+                barbershop reservation system in PHP and MySQL, Flutter
+                companions and marketplaces, small tools that hold together
+                under real use.
+              </p>
+            </div>
+            <div class="hero__actions">
+              <a class="btn btn--accent" href="projects.html">
+                View work <span aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost" href="contact.html">Get in touch</a>
+            </div>
+          </div>
+
+          <aside class="signal" data-reveal aria-label="Network overview">
+            <div class="signal__head">
+              <span class="signal__live">
+                <span class="status__dot" aria-hidden="true"></span>
+                system online
+              </span>
+              <span>MY / 2026</span>
+            </div>
+
+            <svg
+              class="signal__map"
+              viewBox="0 0 360 300"
+              role="img"
+              aria-label="Abstract network diagram connecting web, mobile, data and network nodes"
+            >
+              <g class="ring">
+                <circle cx="180" cy="150" r="112" />
+                <circle cx="180" cy="150" r="76" />
+                <circle cx="180" cy="150" r="40" />
+              </g>
+              <circle
+                class="ring ring--dashed"
+                cx="180"
+                cy="150"
+                r="94"
+              />
+              <g class="link">
+                <path d="M180 150 L72 82" />
+                <path d="M180 150 L298 76" />
+                <path d="M180 150 L64 228" />
+                <path d="M180 150 L296 224" />
+                <path d="M180 150 L180 42" />
+                <path d="M180 150 L180 260" />
+              </g>
+              <g class="node">
+                <circle cx="72" cy="82" r="8" />
+                <circle cx="298" cy="76" r="8" />
+                <circle cx="64" cy="228" r="8" />
+                <circle cx="296" cy="224" r="8" />
+                <circle cx="180" cy="42" r="8" />
+                <circle cx="180" cy="260" r="8" />
+              </g>
+              <circle
+                class="node node--ring"
+                cx="180"
+                cy="150"
+                r="20"
+                stroke="none"
+              />
+              <circle class="node node--core" cx="180" cy="150" r="13" />
+              <g>
+                <text x="72" y="62" text-anchor="middle">WEB</text>
+                <text x="298" y="56" text-anchor="middle">MOBILE</text>
+                <text x="64" y="252" text-anchor="middle">DATA</text>
+                <text x="296" y="248" text-anchor="middle">NETWORK</text>
+                <text x="180" y="26" text-anchor="middle">CORE</text>
+              </g>
+            </svg>
+
+            <dl class="signal__meta">
+              <div>
+                <dt>Based</dt>
+                <dd>Petaling Jaya, MY</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Networks · Web · Mobile</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="strip">
+        <div class="container strip__inner">
+          <span class="strip__label">Building with</span>
+          <ul class="strip__list">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Flutter</li>
+            <li>Dart</li>
+            <li>Firebase</li>
+            <li>Hive</li>
+            <li>Google Maps</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2 class="section__title">Three builds, end to end.</h2>
+            </div>
+            <a class="link-arrow" href="projects.html">
+              All five <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="cards cards--featured" data-reveal>
+            <article class="card">
+              <div class="card__media">
+                <img
+                  src="assets/work/brs.svg"
+                  alt="Placeholder artwork for the Barbershop Reservation System"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card__body">
+                <div class="card__top">
+                  <span class="card__index">01</span>
+                  <span class="card__year">2025</span>
+                </div>
+                <h3 class="card__title">
+                  <a href="work/brs.html">Barbershop Reservation System</a>
+                </h3>
+                <p class="card__desc">
+                  Walk-in booking moved online: customer and admin dashboards
+                  on one booking schema.
+                </p>
+                <ul class="card__tags">
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                  <li>HTML / CSS</li>
+                </ul>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__media">
+                <img
+                  src="assets/work/waqafer.svg"
+                  alt="Placeholder artwork for Waqafer"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card__body">
+                <div class="card__top">
+                  <span class="card__index">02</span>
+                  <span class="card__year">2025–2026</span>
+                </div>
+                <h3 class="card__title">
+                  <a href="work/waqafer.html">Waqafer</a>
+                </h3>
+                <p class="card__desc">
+                  Prayer times, qiblah, nearby mosques, Quran and Hadith in one
+                  companion app.
+                </p>
+                <ul class="card__tags">
+                  <li>Flutter</li>
+                  <li>Dart</li>
+                  <li>Google Maps</li>
+                </ul>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </article>
+
+            <article class="card card--wide">
+              <div class="card__media">
+                <img
+                  src="assets/work/pretzel.svg"
+                  alt="Placeholder artwork for Pretzel"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card__body">
+                <div class="card__top">
+                  <span class="card__index">03</span>
+                  <span class="card__year">2025</span>
+                </div>
+                <h3 class="card__title">
+                  <a href="work/pretzel.html">Pretzel</a>
+                </h3>
+                <p class="card__desc">
+                  A second-hand textbook marketplace with listings, chat,
+                  wishlist and checkout, modelled on Firebase.
+                </p>
+                <ul class="card__tags">
+                  <li>Flutter</li>
+                  <li>Firebase</li>
+                  <li>Firestore</li>
+                </ul>
+                <span class="card__arrow" aria-hidden="true">→</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="stats" data-reveal>
+            <article class="stat">
+              <span class="stat__mark" aria-hidden="true"></span>
+              <p class="stat__label">Recognition</p>
+              <p class="stat__value">FYP Best Website</p>
+              <p class="stat__note">
+                Barbershop Reservation System · UiTM Kedah
+              </p>
+            </article>
+            <article class="stat">
+              <span class="stat__mark" aria-hidden="true"></span>
+              <p class="stat__label">Release</p>
+              <p class="stat__value">Google Play</p>
+              <p class="stat__note">Waqafer · built at FELDA</p>
+            </article>
+            <article class="stat">
+              <span class="stat__mark" aria-hidden="true"></span>
+              <p class="stat__label">Experience</p>
+              <p class="stat__value">FELDA internship</p>
+              <p class="stat__note">
+                Mobile App Developer · Sep 2025 – Feb 2026
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div class="prose" data-reveal>
+            <p>
+              Diploma in Computer Science at UiTM Kedah, now Computer Networks
+              at UiTM Jasin. During my diploma I built a barbershop reservation
+              system as my final-year project and won the FYP Best Website
+              category — now I build Flutter apps at FELDA.
+            </p>
+            <p>
+              <a href="about.html">More about the path →</a>
+            </p>
+          </div>
+          <div class="panel-bone" data-reveal>
+            <div class="panel-bone__head">
+              <p class="eyebrow">At a glance</p>
+              <span class="mono">2026</span>
+            </div>
+            <dl class="facts">
+              <div class="fact">
+                <dt>Now</dt>
+                <dd>Computer Networks · UiTM Jasin</dd>
+              </div>
+              <div class="fact">
+                <dt>Was</dt>
+                <dd>Mobile App Developer intern · FELDA</dd>
+              </div>
+              <div class="fact">
+                <dt>Based</dt>
+                <dd>Petaling Jaya, Malaysia</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div class="container">
+          <div class="contact-band__panel" data-reveal>
+            <p class="eyebrow">Contact</p>
+            <h2 class="contact-band__title">Work together?</h2>
+            <p>
+              Email
+              <a href="mailto:adamhjumain@gmail.com">adamhjumain@gmail.com</a>
+              or find me on
+              <a href="https://github.com/adamnymy">GitHub</a> and
+              <a href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+                >LinkedIn</a
+              >.
+            </p>
+            <div class="contact-band__actions">
+              <a class="btn btn--ground" href="mailto:adamhjumain@gmail.com">
+                Email me
+              </a>
+              <a class="link-arrow" href="contact.html">
+                Contact details <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="container foot__inner">
+        <div class="foot__brand">
+          <span class="wordmark">adam harith j</span>
+          <p>Computer networks student · Petaling Jaya, Malaysia</p>
+        </div>
+        <nav class="foot__links" aria-label="Footer">
+          <a class="foot__link" href="https://github.com/adamnymy">GitHub</a>
+          <a
+            class="foot__link"
+            href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+            >LinkedIn</a
+          >
+          <a class="foot__link" href="contact.html">Email</a>
+        </nav>
+        <p class="foot__meta">© <span data-year>2026</span> Adam Harith J</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#F0EBDD"/>
+  <g stroke="#232C27" stroke-opacity=".1">
+    <path d="M0 100H800M0 200H800M0 300H800M0 400H800"/>
+    <path d="M100 0V500M200 0V500M300 0V500M400 0V500M500 0V500M600 0V500M700 0V500"/>
+  </g>
+  <rect width="18" height="500" fill="#E8D98F"/>
+  <text x="52" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3">PROJECT 04 / MOBILE / OFFLINE</text>
+  <text x="760" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" text-anchor="end">HIVE</text>
+
+  <g transform="translate(520 110)">
+    <rect width="260" height="250" rx="16" fill="#232C27"/>
+    <text x="24" y="40" fill="#F0EBDD" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">CASHFLOW / 6M</text>
+    <path d="M24 84H236" stroke="#F0EBDD" stroke-opacity=".18"/>
+    <g fill="#E8D98F">
+      <rect x="24" y="170" width="22" height="44" rx="4"/>
+      <rect x="60" y="146" width="22" height="68" rx="4"/>
+      <rect x="96" y="122" width="22" height="92" rx="4"/>
+      <rect x="132" y="158" width="22" height="56" rx="4"/>
+      <rect x="168" y="104" width="22" height="110" rx="4"/>
+      <rect x="204" y="132" width="22" height="82" rx="4"/>
+    </g>
+    <path d="M35 160 L71 138 L107 112 L143 148 L179 94 L215 122" stroke="#F0EBDD" stroke-width="2"/>
+    <g fill="#F0EBDD">
+      <circle cx="35" cy="160" r="3"/>
+      <circle cx="71" cy="138" r="3"/>
+      <circle cx="107" cy="112" r="3"/>
+      <circle cx="143" cy="148" r="3"/>
+      <circle cx="179" cy="94" r="3"/>
+      <circle cx="215" cy="122" r="3"/>
+    </g>
+    <text x="24" y="234" fill="#E8D98F" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="2">BALANCE / OFFLINE</text>
+  </g>
+
+  <text x="50" y="342" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="78" font-weight="600" letter-spacing="-3">DRYWALLET</text>
+  <text x="55" y="404" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2">OFFLINE FINANCE TRACKER</text>
+  <text x="55" y="452" fill="#232C27" fill-opacity=".55" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">FLUTTER / HIVE / FL_CHART</text>
+</svg>

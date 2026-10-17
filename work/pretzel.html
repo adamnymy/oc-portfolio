@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#232C27" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <title>Pretzel — Adam Harith J</title>
+    <meta
+      name="description"
+      content="Case study: Pretzel, a Flutter and Firebase marketplace for second-hand textbooks."
+    />
+    <script>
+      document.documentElement.classList.add("js");
+      window.setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove("js");
+      }, 2500);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="wordmark" href="../index.html">adam harith j</a>
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          Menu
+          <span class="nav__toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="nav__menu" id="nav-menu">
+          <nav aria-label="Primary">
+            <ul class="nav__links">
+              <li>
+                <a class="nav__link" href="../projects.html" aria-current="page"
+                  >Work</a
+                >
+              </li>
+              <li><a class="nav__link" href="../about.html">About</a></li>
+              <li><a class="nav__link" href="../contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn--accent btn--sm nav__cta" href="../contact.html">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <article class="case">
+        <div class="container">
+          <p class="backline">
+            <a class="link-arrow" href="../projects.html">
+              <span aria-hidden="true">←</span> All work
+            </a>
+          </p>
+
+          <header class="case__head" data-reveal>
+            <p class="eyebrow">2025 · Mobile · Marketplace</p>
+            <h1 class="case__title">Pretzel</h1>
+          </header>
+
+          <figure class="case__media" data-reveal>
+            <img
+              src="../assets/work/pretzel.svg"
+              alt="Placeholder artwork for Pretzel"
+              width="800"
+              height="500"
+            />
+          </figure>
+
+          <dl class="facts panel-bone facts--case" data-reveal>
+            <div class="fact">
+              <dt>Role</dt>
+              <dd>Sole developer — app design, Firebase model, code</dd>
+            </div>
+            <div class="fact">
+              <dt>Stack</dt>
+              <dd>Flutter · Dart · Firebase</dd>
+            </div>
+            <div class="fact">
+              <dt>Context</dt>
+              <dd>Personal project for students</dd>
+            </div>
+            <div class="fact">
+              <dt>Source</dt>
+              <dd>
+                <a
+                  href="https://github.com/adamnymy/pretzel_flutter"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/adamnymy/pretzel_flutter</a
+                >
+              </dd>
+            </div>
+          </dl>
+
+          <div class="case__sections">
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">01</span>
+                <h2>Problem</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  Course textbooks are expensive, and selling them on is
+                  clumsier than buying them: group chats and notice boards with
+                  no listing, no record, no way to agree a handover. Students
+                  needed something purpose-built instead of a workaround.
+                </p>
+              </div>
+            </section>
+
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">02</span>
+                <h2>Approach</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  I structured the whole thing on <strong>Firebase</strong> —
+                  <strong>accounts</strong> and data on Cloud Firestore, and the
+                  app in Flutter. The loop I optimized for was
+                  <strong>list</strong> a book, <strong>chat</strong> with the
+                  seller, <strong>track</strong> it on a
+                  <strong>wishlist</strong>, and complete a
+                  <strong>checkout</strong>.
+                </p>
+              </div>
+            </section>
+
+            <section class="case__section" data-reveal>
+              <div class="case__label">
+                <span class="eyebrow">03</span>
+                <h2>Outcome</h2>
+              </div>
+              <div class="prose">
+                <p>
+                  A working marketplace where the agreement between buyer and
+                  seller lives inside the app. It doubled as my Firebase
+                  grounding — every feature since in Flutter starts from what
+                  this project taught me about modelling realtime data.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <nav class="case__nav" aria-label="Case navigation">
+            <a class="case__nav-link" href="waqafer.html">
+              <span>Previous case</span>
+              <strong>← Waqafer</strong>
+            </a>
+          </nav>
+        </div>
+      </article>
+    </main>
+
+    <footer class="foot">
+      <div class="container foot__inner">
+        <div class="foot__brand">
+          <span class="wordmark">adam harith j</span>
+          <p>Computer networks student · Petaling Jaya, Malaysia</p>
+        </div>
+        <nav class="foot__links" aria-label="Footer">
+          <a class="foot__link" href="https://github.com/adamnymy">GitHub</a>
+          <a
+            class="foot__link"
+            href="https://my.linkedin.com/in/adam-harith-jumain-287547369"
+            >LinkedIn</a
+          >
+          <a class="foot__link" href="../contact.html">Email</a>
+        </nav>
+        <p class="foot__meta">© <span data-year>2026</span> Adam Harith J</p>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
