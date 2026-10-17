@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#232C27" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <title>Adam Harith J — Computer Networks Student</title>
+    <title>Adam HJ — Computer Networks Student</title>
     <meta
       name="description"
-      content="Selected work by Adam Harith J, a computer networks student building web and mobile applications."
+      content="Selected work by Adam HJ, a computer networks student building web and mobile applications."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adam HJ — Computer Networks Student" />
+    <meta
+      property="og:description"
+      content="Selected work by Adam HJ, a computer networks student building web and mobile applications."
+    />
+    <meta name="twitter:card" content="summary" />
     <script>
       document.documentElement.classList.add("js");
       window.setTimeout(function () {
@@ -30,7 +37,7 @@
 
     <header class="nav">
       <div class="container nav__inner">
-        <a class="wordmark" href="index.html">adam harith j</a>
+        <a class="wordmark" href="index.html">Adam HJ</a>
         <button
           class="nav__toggle"
           type="button"
@@ -64,7 +71,7 @@
           <div data-reveal>
             <p class="status">
               <span class="status__dot" aria-hidden="true"></span>
-              Open to internships — 2026
+              Studying networks · building apps
             </p>
             <h1 class="hero__title">
               I build <span class="hero__mark">working software</span>, end to
@@ -72,7 +79,7 @@
             </h1>
             <div class="hero__lede prose">
               <p>
-                I’m Adam Harith J, a computer networks student at UiTM Jasin. I
+                I’m Adam HJ, a computer networks student at UiTM Jasin. I
                 build <strong>web</strong> and <strong>mobile</strong> apps — a
                 barbershop reservation system in PHP and MySQL, Flutter
                 companions and marketplaces, small tools that hold together
@@ -91,43 +98,45 @@
             <div class="signal__head">
               <span class="signal__live">
                 <span class="status__dot" aria-hidden="true"></span>
-                system online
+                beacon
               </span>
-              <span>MY / 2026</span>
+              <span>3.1073° N · 101.6067° E</span>
             </div>
 
             <svg
               class="signal__map"
               viewBox="0 0 360 300"
               role="img"
-              aria-label="Abstract network diagram connecting web, mobile, data and network nodes"
+              aria-label="Wireframe globe linking web, mobile, data and network nodes around a central core"
             >
-              <g class="ring">
-                <circle cx="180" cy="150" r="112" />
-                <circle cx="180" cy="150" r="76" />
-                <circle cx="180" cy="150" r="40" />
+              <g class="globe">
+                <circle class="globe__sphere" cx="180" cy="150" r="100" />
+                <g class="globe__line">
+                  <ellipse cx="180" cy="150" rx="62" ry="100" />
+                  <ellipse cx="180" cy="150" rx="24" ry="100" />
+                  <ellipse cx="180" cy="150" rx="100" ry="24" />
+                  <ellipse cx="180" cy="100" rx="86.5" ry="20" />
+                  <ellipse cx="180" cy="200" rx="86.5" ry="20" />
+                  <ellipse cx="180" cy="63" rx="49" ry="12" />
+                  <ellipse cx="180" cy="237" rx="49" ry="12" />
+                </g>
               </g>
-              <circle
-                class="ring ring--dashed"
-                cx="180"
-                cy="150"
-                r="94"
-              />
+              <g class="beacon">
+                <circle cx="180" cy="150" r="34" />
+                <circle cx="180" cy="150" r="34" />
+                <circle cx="180" cy="150" r="34" />
+              </g>
               <g class="link">
-                <path d="M180 150 L72 82" />
-                <path d="M180 150 L298 76" />
-                <path d="M180 150 L64 228" />
-                <path d="M180 150 L296 224" />
-                <path d="M180 150 L180 42" />
-                <path d="M180 150 L180 260" />
+                <path d="M180 150 Q150 108 109 79" />
+                <path d="M180 150 Q212 108 251 79" />
+                <path d="M180 150 Q150 192 109 221" />
+                <path d="M180 150 Q212 192 251 221" />
               </g>
               <g class="node">
-                <circle cx="72" cy="82" r="8" />
-                <circle cx="298" cy="76" r="8" />
-                <circle cx="64" cy="228" r="8" />
-                <circle cx="296" cy="224" r="8" />
-                <circle cx="180" cy="42" r="8" />
-                <circle cx="180" cy="260" r="8" />
+                <circle cx="109" cy="79" r="7" />
+                <circle cx="251" cy="79" r="7" />
+                <circle cx="109" cy="221" r="7" />
+                <circle cx="251" cy="221" r="7" />
               </g>
               <circle
                 class="node node--ring"
@@ -136,13 +145,13 @@
                 r="20"
                 stroke="none"
               />
-              <circle class="node node--core" cx="180" cy="150" r="13" />
+              <circle class="node node--core" cx="180" cy="150" r="12" />
               <g>
-                <text x="72" y="62" text-anchor="middle">WEB</text>
-                <text x="298" y="56" text-anchor="middle">MOBILE</text>
-                <text x="64" y="252" text-anchor="middle">DATA</text>
-                <text x="296" y="248" text-anchor="middle">NETWORK</text>
-                <text x="180" y="26" text-anchor="middle">CORE</text>
+                <text x="109" y="63" text-anchor="middle">WEB</text>
+                <text x="251" y="63" text-anchor="middle">MOBILE</text>
+                <text x="109" y="243" text-anchor="middle">DATA</text>
+                <text x="251" y="243" text-anchor="middle">NETWORK</text>
+                <text x="180" y="176" text-anchor="middle">CORE</text>
               </g>
             </svg>
 
@@ -154,6 +163,10 @@
               <div>
                 <dt>Focus</dt>
                 <dd>Networks · Web · Mobile</dd>
+              </div>
+              <div>
+                <dt>Currently</dt>
+                <dd>Semester 4 · UiTM Jasin</dd>
               </div>
             </dl>
           </aside>
@@ -380,7 +393,7 @@
     <footer class="foot">
       <div class="container foot__inner">
         <div class="foot__brand">
-          <span class="wordmark">adam harith j</span>
+          <span class="wordmark">Adam HJ</span>
           <p>Computer networks student · Petaling Jaya, Malaysia</p>
         </div>
         <nav class="foot__links" aria-label="Footer">
@@ -392,7 +405,7 @@
           >
           <a class="foot__link" href="contact.html">Email</a>
         </nav>
-        <p class="foot__meta">© <span data-year>2026</span> Adam Harith J</p>
+        <p class="foot__meta">© <span data-year>2026</span> Adam HJ</p>
       </div>
     </footer>
 

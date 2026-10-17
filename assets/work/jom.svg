@@ -5,8 +5,8 @@
     <path d="M100 0V500M200 0V500M300 0V500M400 0V500M500 0V500M600 0V500M700 0V500"/>
   </g>
   <rect width="18" height="500" fill="#E8D98F"/>
-  <text x="52" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3">PROJECT 05 / WEB / PROTOTYPE</text>
-  <text x="760" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" text-anchor="end">QR ORDERING</text>
+  <text x="52" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3">CASE 05 / WEB / PROTOTYPE</text>
+  <text x="760" y="64" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" text-anchor="end">ARCHIVED / QR</text>
 
   <g transform="translate(530 130)">
     <rect width="196" height="196" rx="14" fill="#232C27"/>
@@ -39,8 +39,8 @@
     <text x="46" y="32" fill="#F0EBDD" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">TABLE 04 / SCAN TO ORDER</text>
   </g>
 
-  <text x="50" y="262" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="118" font-weight="600" letter-spacing="-6">JOM</text>
-  <text x="50" y="342" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="118" font-weight="600" letter-spacing="-6">ORDER</text>
+  <text x="50" y="250" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="112" font-weight="600" letter-spacing="-4" textLength="200" lengthAdjust="spacingAndGlyphs">JOM</text>
+  <text x="50" y="368" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="112" font-weight="600" letter-spacing="-4" textLength="360" lengthAdjust="spacingAndGlyphs">ORDER</text>
   <text x="55" y="430" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="2">QR ORDERING PROTOTYPE</text>
   <text x="55" y="472" fill="#232C27" fill-opacity=".55" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="2">HTML / CSS</text>
 </svg>

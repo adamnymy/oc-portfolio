@@ -58,7 +58,7 @@ panel. Sizing, colour, radius, and motion values are tokens only.
   left, mono links and an accent CTA right. Mobile uses a real toggle button
   with an accessible dropdown — no hidden content without JS.
 - **Hero**: status pill, oversized claim with one yellow phrase, short lede,
-  two actions; paired with a coded network diagram panel (no fake app
+  two actions; paired with a coded wireframe-globe panel (no fake app
   screenshots).
 - **Tech strip**: hairline band with mono stack names.
 - **Project cards**: 12-column bento grid — 7/5 then full-width, or 7/5 then
@@ -77,8 +77,9 @@ panel. Sizing, colour, radius, and motion values are tokens only.
 
 Short, functional transitions only: hover lift on cards, arrow fills, link
 colour, reveal-on-scroll (`IntersectionObserver`, 18px rise). The status dot
-pulses and the network ring rotates slowly. Everything flattens under
-`prefers-reduced-motion`; content is visible immediately when JS is off.
+pulses, broadcast rings expand from the globe core, and link dashes flow
+slowly. Everything flattens under `prefers-reduced-motion`; content is
+visible immediately when JS is off.
 
 ## JS budget
 
@@ -90,10 +91,11 @@ dependencies.
 
 - `index.html` — hero + network signal, stack strip, three featured cards,
   credentials, bio split, contact band.
-- `projects.html` — all five projects; three case studies, two source links.
+- `projects.html` — all five projects, each with a case study.
 - `about.html` — intro, coordinates panel, tool groups, timeline.
 - `contact.html` — email card with copy control, contact rows, GitHub band.
-- `work/brs.html`, `work/waqafer.html`, `work/pretzel.html` — case studies.
+- `work/brs.html`, `work/waqafer.html`, `work/pretzel.html`,
+  `work/drywallet.html`, `work/jom-order.html` — case studies.
 
 ## Assets
 

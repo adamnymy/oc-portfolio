@@ -493,24 +493,45 @@ html:not(.js) [data-copy] {
   margin-block: var(--space-md);
 }
 
-.signal__map .ring {
+.signal__map .globe__sphere {
+  fill: none;
+  stroke: var(--color-line-strong);
+  stroke-width: 1.2;
+}
+
+.signal__map .globe__line {
   fill: none;
   stroke: var(--color-line);
   stroke-width: 1;
-}
-
-.signal__map .ring--dashed {
-  stroke: var(--color-line-strong);
-  stroke-dasharray: 3 7;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: spin 52s linear infinite;
 }
 
 .signal__map .link {
   fill: none;
   stroke: var(--color-yellow-line);
   stroke-width: 1;
+}
+
+.signal__map .link path {
+  stroke-dasharray: 2 6;
+  animation: flow 4s linear infinite;
+}
+
+.signal__map .beacon circle {
+  fill: none;
+  stroke: var(--color-yellow-line);
+  stroke-width: 1;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: broadcast 4.2s var(--ease-out) infinite;
+}
+
+.signal__map .beacon circle:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+.signal__map .beacon circle:nth-child(3) {
+  animation-delay: 2.8s;
 }
 
 .signal__map .node {
@@ -537,6 +558,9 @@ html:not(.js) [data-copy] {
   font-size: 9px;
   letter-spacing: 0.12em;
   fill: var(--color-bone-muted);
+  paint-order: stroke;
+  stroke: var(--color-ground-2);
+  stroke-width: 2px;
 }
 
 .signal__meta {
@@ -546,6 +570,10 @@ html:not(.js) [data-copy] {
   gap: var(--space-md);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-line);
+}
+
+.signal__meta div:nth-child(3) {
+  grid-column: 1 / -1;
 }
 
 .signal__meta dt {
@@ -1377,9 +1405,23 @@ a.foot__link:hover {
   }
 }
 
-@keyframes spin {
+@keyframes flow {
   to {
-    transform: rotate(360deg);
+    stroke-dashoffset: -16;
+  }
+}
+
+@keyframes broadcast {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.35);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
   }
 }
 
