@@ -17,9 +17,9 @@
     <text x="22" y="116" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="30" font-weight="600" letter-spacing="-1">Data</text>
     <text x="22" y="148" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="30" font-weight="600" letter-spacing="-1">Structures</text>
     <rect x="22" y="160" width="78" height="7" rx="3.5" fill="#232C27"/>
-    <path d="M164 150 C164 138 188 138 188 150 C188 162 164 162 164 150 Z" fill="#232C27"/>
-    <circle cx="172" cy="150" r="2.5" fill="#E8D98F"/>
-    <circle cx="180" cy="150" r="2.5" fill="#E8D98F"/>
+    <path d="M164 70 C164 58 188 58 188 70 C188 82 164 82 164 70 Z" fill="#232C27"/>
+    <circle cx="172" cy="70" r="2.5" fill="#E8D98F"/>
+    <circle cx="180" cy="70" r="2.5" fill="#E8D98F"/>
   </g>
 
   <text x="50" y="350" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="100" font-weight="600" letter-spacing="-5">PRETZEL</text>
