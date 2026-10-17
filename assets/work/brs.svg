@@ -32,7 +32,6 @@
       <rect x="156" y="150" width="54" height="30" rx="5"/>
       <rect x="24" y="234" width="120" height="16" rx="8"/>
     </g>
-    <text x="84" y="245" fill="#232C27" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1" text-anchor="middle">CONFIRMED</text>
   </g>
 
   <text x="50" y="350" fill="#232C27" font-family="Space Grotesk, Inter, sans-serif" font-size="150" font-weight="600" letter-spacing="-7">BRS</text>

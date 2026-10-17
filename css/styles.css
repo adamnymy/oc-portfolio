@@ -1262,7 +1262,7 @@ html:not(.js) [data-copy] {
 .case__media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
