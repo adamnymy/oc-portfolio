@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#232C27" />
+    <meta name="theme-color" content="#FAF7EE" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>Contact — Adam HJ</title>
     <meta
@@ -18,6 +18,13 @@
     />
     <meta name="twitter:card" content="summary" />
     <script>
+      try {
+        if (localStorage.getItem("ahj:theme") === "night") {
+          document.documentElement.dataset.theme = "night";
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) themeMeta.setAttribute("content", "#211E2E");
+        }
+      } catch (error) {}
       document.documentElement.classList.add("js");
       window.setTimeout(function () {
         if (!window.__siteReady) document.documentElement.classList.remove("js");
@@ -26,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/tokens.css" />
@@ -34,6 +41,29 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="hud">
+      <div class="container hud__inner">
+        <span class="hud__live">
+          <span class="status__dot" aria-hidden="true"></span>
+          Beacon · Petaling Jaya, MY
+        </span>
+        <span class="hud__end">
+          <span>3.1073° N · 101.6067° E</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
 
     <header class="nav">
       <div class="container nav__inner">
@@ -62,6 +92,17 @@
               </li>
             </ul>
           </nav>
+          <button
+            class="theme-toggle theme-toggle--nav"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
           <a class="btn btn--accent btn--sm nav__cta" href="contact.html">
             Get in touch
           </a>
@@ -82,7 +123,8 @@
       </section>
 
       <section class="section">
-        <div class="container">
+        <span class="doodle doodle--star doodle--d doodle--teal" aria-hidden="true"></span>
+        <div class="container contact-board">
           <div class="contact-card" data-reveal>
             <p class="eyebrow">Email</p>
             <a class="contact-card__email" href="mailto:adamhjumain@gmail.com"
@@ -105,7 +147,9 @@
             </p>
           </div>
 
-          <dl class="contact__rows" data-reveal>
+          <div class="signposts" data-reveal>
+            <p class="eyebrow">Signposts</p>
+            <dl class="contact__rows">
             <div class="contact__row">
               <dt>Phone</dt>
               <dd>+60 18-310 8478</dd>
@@ -136,7 +180,8 @@
                 >
               </dd>
             </div>
-          </dl>
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -164,12 +209,12 @@
       </section>
     </main>
 
-    <footer class="foot">
+        <footer class="foot">
       <div class="container foot__inner">
-        <div class="foot__brand">
-          <span class="wordmark">Adam HJ</span>
-          <p>Computer networks student · Petaling Jaya, Malaysia</p>
-        </div>
+        <p class="foot__status">
+          <span class="status__dot" aria-hidden="true"></span>
+          © <span data-year>2026</span> Adam HJ · Petaling Jaya
+        </p>
         <nav class="foot__links" aria-label="Footer">
           <a
             class="foot__link"
@@ -187,7 +232,7 @@
           >
           <a class="foot__link" href="contact.html">Email</a>
         </nav>
-        <p class="foot__meta">© <span data-year>2026</span> Adam HJ</p>
+        <p class="foot__meta">Hand-built · no frameworks</p>
       </div>
     </footer>
 

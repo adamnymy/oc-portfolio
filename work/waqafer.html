@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#232C27" />
+    <meta name="theme-color" content="#FAF7EE" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <title>Waqafer — Adam HJ</title>
     <meta
@@ -18,6 +18,13 @@
     />
     <meta name="twitter:card" content="summary" />
     <script>
+      try {
+        if (localStorage.getItem("ahj:theme") === "night") {
+          document.documentElement.dataset.theme = "night";
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) themeMeta.setAttribute("content", "#211E2E");
+        }
+      } catch (error) {}
       document.documentElement.classList.add("js");
       window.setTimeout(function () {
         if (!window.__siteReady) document.documentElement.classList.remove("js");
@@ -26,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/tokens.css" />
@@ -34,6 +41,29 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="hud">
+      <div class="container hud__inner">
+        <span class="hud__live">
+          <span class="status__dot" aria-hidden="true"></span>
+          Beacon · Petaling Jaya, MY
+        </span>
+        <span class="hud__end">
+          <span>3.1073° N · 101.6067° E</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
 
     <header class="nav">
       <div class="container nav__inner">
@@ -62,6 +92,17 @@
               <li><a class="nav__link" href="../contact.html">Contact</a></li>
             </ul>
           </nav>
+          <button
+            class="theme-toggle theme-toggle--nav"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
           <a class="btn btn--accent btn--sm nav__cta" href="../contact.html">
             Get in touch
           </a>
@@ -79,33 +120,41 @@
           </p>
 
           <header class="case__head" data-reveal>
-            <p class="eyebrow">2025 — 2026 · Mobile · FELDA internship</p>
+            <div class="case__tag">
+              <span class="case__no">02</span>
+              <span class="eyebrow">Case study</span>
+            </div>
             <h1 class="case__title">Waqafer</h1>
+            <ul class="chips">
+            <li>2025 — 2026</li>
+            <li>Mobile</li>
+            <li>FELDA internship</li>
+            </ul>
           </header>
 
           <figure class="case__media" data-reveal>
             <img
               src="../assets/work/waqafer.svg"
-              alt="Placeholder artwork for Waqafer"
+              alt="Pixel-art cover: Islamic geometric star pattern"
               width="800"
               height="500"
             />
           </figure>
 
-          <dl class="facts panel-bone facts--case" data-reveal>
-            <div class="fact">
+          <dl class="statbar" data-reveal>
+            <div class="statbar__slot">
               <dt>Role</dt>
               <dd>Mobile app developer (intern) — Flutter implementation</dd>
             </div>
-            <div class="fact">
+            <div class="statbar__slot">
               <dt>Stack</dt>
               <dd>Flutter · Dart · Google Maps</dd>
             </div>
-            <div class="fact">
+            <div class="statbar__slot">
               <dt>Context</dt>
               <dd>Internship at FELDA, Sep 2025 – Feb 2026</dd>
             </div>
-            <div class="fact">
+            <div class="statbar__slot">
               <dt>Source</dt>
               <dd>
                 <a
@@ -116,7 +165,7 @@
                 >
               </dd>
             </div>
-            <div class="fact">
+            <div class="statbar__slot">
               <dt>Release</dt>
               <dd>
                 <a
@@ -131,11 +180,10 @@
 
           <div class="case__sections">
             <section class="case__section" data-reveal>
-              <div class="case__label">
-                <span class="eyebrow">01</span>
+              <div class="case__step" aria-hidden="true">01</div>
+              <div class="case__body">
                 <h2>Problem</h2>
-              </div>
-              <div class="prose">
+                <div class="prose">
                 <p>
                   Daily Muslim practice scatters across several apps: prayer
                   times in one, qiblah in another, Quran in a third. FELDA needed
@@ -143,14 +191,14 @@
                   prayer scheduling, direction-finding, and Islamic content.
                 </p>
               </div>
+              </div>
             </section>
 
             <section class="case__section" data-reveal>
-              <div class="case__label">
-                <span class="eyebrow">02</span>
+              <div class="case__step" aria-hidden="true">02</div>
+              <div class="case__body">
                 <h2>Approach</h2>
-              </div>
-              <div class="prose">
+                <div class="prose">
                 <p>
                   I built the app in Flutter with Dart: <strong>prayer
                   times</strong>, a <strong>qiblah</strong> compass,
@@ -161,19 +209,20 @@
                   one place.
                 </p>
               </div>
+              </div>
             </section>
 
             <section class="case__section" data-reveal>
-              <div class="case__label">
-                <span class="eyebrow">03</span>
+              <div class="case__step" aria-hidden="true">03</div>
+              <div class="case__body">
                 <h2>Outcome</h2>
-              </div>
-              <div class="prose">
+                <div class="prose">
                 <p>
                   Waqafer is published on <strong>Google Play</strong> — my first
                   production mobile release, built through the full internship
                   cycle from feature work to store delivery.
                 </p>
+              </div>
               </div>
             </section>
           </div>
@@ -192,12 +241,12 @@
       </article>
     </main>
 
-    <footer class="foot">
+        <footer class="foot">
       <div class="container foot__inner">
-        <div class="foot__brand">
-          <span class="wordmark">Adam HJ</span>
-          <p>Computer networks student · Petaling Jaya, Malaysia</p>
-        </div>
+        <p class="foot__status">
+          <span class="status__dot" aria-hidden="true"></span>
+          © <span data-year>2026</span> Adam HJ · Petaling Jaya
+        </p>
         <nav class="foot__links" aria-label="Footer">
           <a
             class="foot__link"
@@ -215,7 +264,7 @@
           >
           <a class="foot__link" href="../contact.html">Email</a>
         </nav>
-        <p class="foot__meta">© <span data-year>2026</span> Adam HJ</p>
+        <p class="foot__meta">Hand-built · no frameworks</p>
       </div>
     </footer>
 

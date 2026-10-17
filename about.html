@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#232C27" />
+    <meta name="theme-color" content="#FAF7EE" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>About — Adam HJ</title>
     <meta
@@ -18,6 +18,13 @@
     />
     <meta name="twitter:card" content="summary" />
     <script>
+      try {
+        if (localStorage.getItem("ahj:theme") === "night") {
+          document.documentElement.dataset.theme = "night";
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) themeMeta.setAttribute("content", "#211E2E");
+        }
+      } catch (error) {}
       document.documentElement.classList.add("js");
       window.setTimeout(function () {
         if (!window.__siteReady) document.documentElement.classList.remove("js");
@@ -26,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/tokens.css" />
@@ -34,6 +41,29 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="hud">
+      <div class="container hud__inner">
+        <span class="hud__live">
+          <span class="status__dot" aria-hidden="true"></span>
+          Beacon · Petaling Jaya, MY
+        </span>
+        <span class="hud__end">
+          <span>3.1073° N · 101.6067° E</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
 
     <header class="nav">
       <div class="container nav__inner">
@@ -62,6 +92,17 @@
               <li><a class="nav__link" href="contact.html">Contact</a></li>
             </ul>
           </nav>
+          <button
+            class="theme-toggle theme-toggle--nav"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
           <a class="btn btn--accent btn--sm nav__cta" href="contact.html">
             Get in touch
           </a>
@@ -84,8 +125,27 @@
       </section>
 
       <section class="section">
-        <div class="container split">
-          <div class="prose" data-reveal>
+        <span class="doodle doodle--star doodle--d doodle--violet" aria-hidden="true"></span>
+        <div class="container">
+          <div class="panel-bone sheet" data-reveal>
+            <div class="sheet__head">
+              <span class="avatar" aria-hidden="true">AH</span>
+              <div>
+                <p class="eyebrow">Player card</p>
+                <h2 class="sheet__name">Adam HJ</h2>
+                <p class="sheet__tag">
+                  Computer networks student · Petaling Jaya, Malaysia
+                </p>
+              </div>
+            </div>
+            <ul class="chips">
+              <li>Semester 4</li>
+              <li>Computer Networks</li>
+              <li>Ex-FELDA intern</li>
+              <li>Petaling Jaya</li>
+            </ul>
+            <div class="sheet__grid">
+              <div class="prose">
             <p>
               I build with what I’m learning — web apps in PHP and MySQL, mobile
               apps in Flutter and Dart, data layers in Firebase and Hive. The
@@ -97,14 +157,9 @@
               connected, and how they fail. I’d rather understand something
               deeply than pretend to know everything.
             </p>
-          </div>
+              </div>
 
-          <div class="panel-bone" data-reveal>
-            <div class="panel-bone__head">
-              <p class="eyebrow">Coordinates</p>
-              <span class="mono">UiTM / FELDA</span>
-            </div>
-            <dl class="facts">
+              <dl class="facts">
               <div class="fact">
                 <dt>Now</dt>
                 <dd>Computer Networks · UiTM Jasin · semester 4</dd>
@@ -122,79 +177,170 @@
                 <dd>Petaling Jaya, Malaysia</dd>
               </div>
             </dl>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="tools">
+      <section class="section section--band" id="tools">
+        <span class="doodle doodle--star doodle--c" aria-hidden="true"></span>
         <div class="container">
-          <div class="section__head" data-reveal>
+          <div class="section__head" data-reveal data-no="01">
             <div>
-              <p class="eyebrow">Tools</p>
+              <p class="eyebrow">Inventory</p>
               <h2 class="section__title">What I build with.</h2>
             </div>
           </div>
-          <div class="groups" data-reveal>
-            <article class="group">
-              <h3>Mobile</h3>
-              <p>Flutter · Dart · Hive · fl_chart</p>
+          <div class="bag" data-reveal>
+            <article class="bag__slot">
+              <div class="bag__head">
+                <span class="bag__icon" aria-hidden="true"></span>
+                <h3>Mobile</h3>
+              </div>
+              <ul class="chips">
+                <li>Flutter</li>
+                <li>Dart</li>
+                <li>Hive</li>
+                <li>fl_chart</li>
+              </ul>
             </article>
-            <article class="group">
-              <h3>Web</h3>
-              <p>PHP · MySQL · HTML · CSS</p>
+            <article class="bag__slot">
+              <div class="bag__head">
+                <span class="bag__icon" aria-hidden="true"></span>
+                <h3>Web</h3>
+              </div>
+              <ul class="chips">
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
             </article>
-            <article class="group">
-              <h3>Data</h3>
-              <p>Firebase · Cloud Firestore · MySQL modelling</p>
+            <article class="bag__slot">
+              <div class="bag__head">
+                <span class="bag__icon" aria-hidden="true"></span>
+                <h3>Data</h3>
+              </div>
+              <ul class="chips">
+                <li>Firebase</li>
+                <li>Cloud Firestore</li>
+                <li>MySQL modelling</li>
+              </ul>
             </article>
-            <article class="group">
-              <h3>Studying</h3>
-              <p>Computer networks — routing, switching, how data moves</p>
+            <article class="bag__slot">
+              <div class="bag__head">
+                <span class="bag__icon" aria-hidden="true"></span>
+                <h3>Studying</h3>
+              </div>
+              <ul class="chips">
+                <li>Computer networks</li>
+                <li>Routing</li>
+                <li>Switching</li>
+                <li>How data moves</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
       <section class="section" id="timeline">
+        <span class="doodle doodle--star doodle--a doodle--mint" aria-hidden="true"></span>
         <div class="container">
-          <div class="section__head" data-reveal>
+          <div class="section__head" data-reveal data-no="02">
             <div>
-              <p class="eyebrow">Timeline</p>
-              <h2 class="section__title">Where I’ve been.</h2>
+              <p class="eyebrow">Journey</p>
+              <h2 class="section__title">From diploma to now.</h2>
             </div>
           </div>
 
-          <div class="timeline" data-reveal>
-            <article class="entry">
-              <span class="entry__period">2026 — present</span>
-              <div>
-                <h3>Degree in Computer Networks · UiTM Jasin</h3>
-                <p>
-                  Coursework in networking fundamentals. No major project yet —
-                  still building the foundation.
-                </p>
-              </div>
-            </article>
-            <article class="entry">
-              <span class="entry__period">Sep 2025 — Feb 2026</span>
-              <div>
-                <h3>Mobile App Developer (Intern) · FELDA</h3>
-                <p>
-                  Built Waqafer, a Flutter prayer companion app — prayer times,
-                  nearby mosques, Quran and Hadith content.
-                </p>
-              </div>
-            </article>
-            <article class="entry">
-              <span class="entry__period">2023 — 2025</span>
-              <div>
-                <h3>Diploma in Computer Science · UiTM Kedah</h3>
-                <p>
-                  Built the Barbershop Reservation System as a final-year
-                  project; won the FYP Best Website category.
-                </p>
-              </div>
-            </article>
+          <div class="board__panel journey" data-reveal>
+            <div class="board__head">
+              <span class="board__live">
+                <span class="status__dot" aria-hidden="true"></span>
+                route log
+              </span>
+              <span>2023 → now</span>
+            </div>
+            <ol class="journey__route">
+              <li class="station">
+                <span class="station__icon" aria-hidden="true">DK</span>
+                <div class="station__card">
+                  <span class="station__period">2023 — 2025</span>
+                  <h3>Diploma in Computer Science · UiTM Kedah</h3>
+                  <p>
+                    Built the Barbershop Reservation System as a final-year
+                    project; won the FYP Best Website category.
+                  </p>
+                </div>
+              </li>
+              <li class="station station--mint">
+                <span class="station__icon" aria-hidden="true">FD</span>
+                <div class="station__card">
+                  <span class="station__period">Sep 2025 — Feb 2026</span>
+                  <h3>Mobile App Developer (Intern) · FELDA</h3>
+                  <p>
+                    Built Waqafer, a Flutter prayer companion app — prayer
+                    times, nearby mosques, Quran and Hadith content.
+                  </p>
+                </div>
+              </li>
+              <li class="station station--now">
+                <span class="station__icon" aria-hidden="true">CN</span>
+                <div class="station__card">
+                  <span class="station__period">2026 — present</span>
+                  <h3>Degree in Computer Networks · UiTM Jasin</h3>
+                  <p>
+                    Coursework in networking fundamentals. No major project yet
+                    — still building the foundation.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="trophies">
+        <span class="doodle doodle--star doodle--b doodle--teal" aria-hidden="true"></span>
+        <div class="container">
+          <div class="section__head" data-reveal data-no="03">
+            <div>
+              <p class="eyebrow">Trophies</p>
+              <h2 class="section__title">Bits worth finding.</h2>
+            </div>
+          </div>
+
+          <div class="board__panel" data-reveal>
+            <div class="board__head">
+              <span class="board__live">
+                <span class="status__dot" aria-hidden="true"></span>
+                trophy shelf
+              </span>
+              <span data-shelf-count>0 / 7</span>
+            </div>
+            <ul class="shelf__list">
+              <li class="shelf__item" data-trophy="ufo">
+                <span class="shelf__badge" aria-hidden="true"></span>met the ufo
+              </li>
+              <li class="shelf__item" data-trophy="ufo3">
+                <span class="shelf__badge" aria-hidden="true"></span>poke it thrice
+              </li>
+              <li class="shelf__item" data-trophy="chatty">
+                <span class="shelf__badge" aria-hidden="true"></span>chatty gamepad
+              </li>
+              <li class="shelf__item" data-trophy="cheat">
+                <span class="shelf__badge" aria-hidden="true"></span>konami code
+              </li>
+              <li class="shelf__item" data-trophy="gamer">
+                <span class="shelf__badge" aria-hidden="true"></span>score 30 in snake
+              </li>
+              <li class="shelf__item" data-trophy="night">
+                <span class="shelf__badge" aria-hidden="true"></span>night owl
+              </li>
+              <li class="shelf__item" data-trophy="quests">
+                <span class="shelf__badge" aria-hidden="true"></span>read every quest
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -221,12 +367,12 @@
       </section>
     </main>
 
-    <footer class="foot">
+        <footer class="foot">
       <div class="container foot__inner">
-        <div class="foot__brand">
-          <span class="wordmark">Adam HJ</span>
-          <p>Computer networks student · Petaling Jaya, Malaysia</p>
-        </div>
+        <p class="foot__status">
+          <span class="status__dot" aria-hidden="true"></span>
+          © <span data-year>2026</span> Adam HJ · Petaling Jaya
+        </p>
         <nav class="foot__links" aria-label="Footer">
           <a
             class="foot__link"
@@ -244,7 +390,7 @@
           >
           <a class="foot__link" href="contact.html">Email</a>
         </nav>
-        <p class="foot__meta">© <span data-year>2026</span> Adam HJ</p>
+        <p class="foot__meta">Hand-built · no frameworks</p>
       </div>
     </footer>
 

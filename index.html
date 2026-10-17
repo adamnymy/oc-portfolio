@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#232C27" />
+    <meta name="theme-color" content="#FAF7EE" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>Adam HJ — Computer Networks Student</title>
     <meta
@@ -18,6 +18,13 @@
     />
     <meta name="twitter:card" content="summary" />
     <script>
+      try {
+        if (localStorage.getItem("ahj:theme") === "night") {
+          document.documentElement.dataset.theme = "night";
+          var themeMeta = document.querySelector('meta[name="theme-color"]');
+          if (themeMeta) themeMeta.setAttribute("content", "#211E2E");
+        }
+      } catch (error) {}
       document.documentElement.classList.add("js");
       window.setTimeout(function () {
         if (!window.__siteReady) document.documentElement.classList.remove("js");
@@ -26,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/tokens.css" />
@@ -34,6 +41,29 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="hud">
+      <div class="container hud__inner">
+        <span class="hud__live">
+          <span class="status__dot" aria-hidden="true"></span>
+          Beacon · Petaling Jaya, MY
+        </span>
+        <span class="hud__end">
+          <span>3.1073° N · 101.6067° E</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
 
     <header class="nav">
       <div class="container nav__inner">
@@ -58,6 +88,17 @@
               <li><a class="nav__link" href="contact.html">Contact</a></li>
             </ul>
           </nav>
+          <button
+            class="theme-toggle theme-toggle--nav"
+            type="button"
+            title="Toggle dark mode"
+            aria-pressed="false"
+            aria-label="Switch to night mode"
+          >
+            <span class="theme-toggle__sun" aria-hidden="true"></span>
+            <span class="theme-toggle__moon" aria-hidden="true"></span>
+            <span class="theme-toggle__label" aria-hidden="true"></span>
+          </button>
           <a class="btn btn--accent btn--sm nav__cta" href="contact.html">
             Get in touch
           </a>
@@ -67,11 +108,14 @@
 
     <main id="main">
       <section class="hero">
+        <span class="doodle doodle--star doodle--a" aria-hidden="true"></span>
+        <span class="doodle doodle--diamond doodle--b doodle--sky" aria-hidden="true"></span>
         <div class="container hero__grid">
-          <div data-reveal>
+          <div class="hero__intro" data-reveal>
             <p class="status">
               <span class="status__dot" aria-hidden="true"></span>
-              Studying networks · building apps
+              <span class="status__text">Studying networks · building apps</span>
+              <span class="status__caret" aria-hidden="true"></span>
             </p>
             <h1 class="hero__title">
               I build <span class="hero__mark">working software</span>, end to
@@ -94,68 +138,90 @@
             </div>
           </div>
 
-          <aside class="signal" data-reveal aria-label="Network overview">
-            <div class="signal__head">
-              <span class="signal__live">
+          <aside class="player" data-reveal aria-label="Player card">
+            <div class="player__head">
+              <span class="player__live">
+                <span class="status__dot" aria-hidden="true"></span>
+                online
+              </span>
+              <span>Player 01</span>
+            </div>
+            <div class="player__id">
+              <span class="player__avatar" aria-hidden="true"></span>
+              <div>
+                <p class="player__name">Adam HJ</p>
+                <p class="player__tag">Networks · Web · Mobile</p>
+              </div>
+            </div>
+            <ul class="player__bars">
+              <li>
+                <span class="player__bar-label">Web</span>
+                <span class="player__bar"
+                  ><span class="player__bar-fill" style="width: 80%"></span
+                ></span>
+                <span class="player__bar-value">80</span>
+              </li>
+              <li>
+                <span class="player__bar-label">Mobile</span>
+                <span class="player__bar"
+                  ><span class="player__bar-fill" style="width: 70%"></span
+                ></span>
+                <span class="player__bar-value">70</span>
+              </li>
+              <li>
+                <span class="player__bar-label">Networks</span>
+                <span class="player__bar"
+                  ><span class="player__bar-fill" style="width: 60%"></span
+                ></span>
+                <span class="player__bar-value">60</span>
+              </li>
+            </ul>
+            <p class="player__foot">
+              3.1073° N · 101.6067° E
+              <span>Semester 4</span>
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="board" aria-label="Network overview">
+        <div class="container">
+          <div class="board__panel" data-reveal>
+            <div class="board__head">
+              <span class="board__live">
                 <span class="status__dot" aria-hidden="true"></span>
                 beacon
               </span>
               <span>3.1073° N · 101.6067° E</span>
             </div>
-
-            <svg
-              class="signal__map"
-              viewBox="0 0 360 300"
-              role="img"
-              aria-label="Wireframe globe linking web, mobile, data and network nodes around a central core"
-            >
-              <g class="globe">
-                <circle class="globe__sphere" cx="180" cy="150" r="100" />
-                <g class="globe__line">
-                  <ellipse cx="180" cy="150" rx="62" ry="100" />
-                  <ellipse cx="180" cy="150" rx="24" ry="100" />
-                  <ellipse cx="180" cy="150" rx="100" ry="24" />
-                  <ellipse cx="180" cy="100" rx="86.5" ry="20" />
-                  <ellipse cx="180" cy="200" rx="86.5" ry="20" />
-                  <ellipse cx="180" cy="63" rx="49" ry="12" />
-                  <ellipse cx="180" cy="237" rx="49" ry="12" />
-                </g>
-              </g>
-              <g class="beacon">
-                <circle cx="180" cy="150" r="34" />
-                <circle cx="180" cy="150" r="34" />
-                <circle cx="180" cy="150" r="34" />
-              </g>
-              <g class="link">
-                <path d="M180 150 Q150 108 109 79" />
-                <path d="M180 150 Q212 108 251 79" />
-                <path d="M180 150 Q150 192 109 221" />
-                <path d="M180 150 Q212 192 251 221" />
-              </g>
-              <g class="node">
-                <circle cx="109" cy="79" r="7" />
-                <circle cx="251" cy="79" r="7" />
-                <circle cx="109" cy="221" r="7" />
-                <circle cx="251" cy="221" r="7" />
-              </g>
-              <circle
-                class="node node--ring"
-                cx="180"
-                cy="150"
-                r="20"
-                stroke="none"
-              />
-              <circle class="node node--core" cx="180" cy="150" r="12" />
-              <g>
-                <text x="109" y="63" text-anchor="middle">WEB</text>
-                <text x="251" y="63" text-anchor="middle">MOBILE</text>
-                <text x="109" y="243" text-anchor="middle">DATA</text>
-                <text x="251" y="243" text-anchor="middle">NETWORK</text>
-                <text x="180" y="176" text-anchor="middle">CORE</text>
-              </g>
-            </svg>
-
-            <dl class="signal__meta">
+            <ol class="board__route">
+              <li class="board__node">
+                <span class="board__icon" aria-hidden="true">WB</span>
+                <span class="board__name">Web</span>
+                <span class="board__ping">12ms</span>
+              </li>
+              <li class="board__node">
+                <span class="board__icon" aria-hidden="true">AP</span>
+                <span class="board__name">API</span>
+                <span class="board__ping">24ms</span>
+              </li>
+              <li class="board__node">
+                <span class="board__icon" aria-hidden="true">DB</span>
+                <span class="board__name">Data</span>
+                <span class="board__ping">31ms</span>
+              </li>
+              <li class="board__node">
+                <span class="board__icon" aria-hidden="true">MB</span>
+                <span class="board__name">Mobile</span>
+                <span class="board__ping">58ms</span>
+              </li>
+              <li class="board__node board__node--core">
+                <span class="board__icon" aria-hidden="true">CR</span>
+                <span class="board__name">Core</span>
+                <span class="board__ping">live</span>
+              </li>
+            </ol>
+            <dl class="board__meta">
               <div>
                 <dt>Based</dt>
                 <dd>Petaling Jaya, MY</dd>
@@ -169,14 +235,23 @@
                 <dd>Semester 4 · UiTM Jasin</dd>
               </div>
             </dl>
-          </aside>
+          </div>
         </div>
       </section>
 
-      <section class="strip">
-        <div class="container strip__inner">
-          <span class="strip__label">Building with</span>
+      <section class="strip" aria-label="Building with">
+        <div class="strip__track">
           <ul class="strip__list">
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Flutter</li>
+            <li>Dart</li>
+            <li>Firebase</li>
+            <li>Hive</li>
+            <li>Google Maps</li>
+            <li>HTML / CSS</li>
+          </ul>
+          <ul class="strip__list" aria-hidden="true">
             <li>PHP</li>
             <li>MySQL</li>
             <li>Flutter</li>
@@ -189,11 +264,12 @@
         </div>
       </section>
 
-      <section class="section" id="work">
+      <section class="section section--band" id="work">
+        <span class="doodle doodle--star doodle--c" aria-hidden="true"></span>
         <div class="container">
-          <div class="section__head" data-reveal>
+          <div class="section__head" data-reveal data-no="01">
             <div>
-              <p class="eyebrow">Selected work</p>
+              <p class="eyebrow">Quest log</p>
               <h2 class="section__title">Three builds, end to end.</h2>
             </div>
             <a class="link-arrow" href="projects.html">
@@ -201,104 +277,106 @@
             </a>
           </div>
 
-          <div class="cards cards--featured" data-reveal>
-            <article class="card">
-              <div class="card__media">
-                <img
-                  src="assets/work/brs.svg"
-                  alt="Placeholder artwork for the Barbershop Reservation System"
-                  width="800"
-                  height="500"
-                  loading="lazy"
-                />
+          <div class="quests" data-reveal>
+            <article class="quest quest--banner">
+            <div class="quest__media">
+              <img
+                src="assets/work/brs.svg"
+                alt="Pixel-art cover: barber pole, chair and booking grid screen"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="quest__body">
+              <div class="quest__top">
+                <span class="quest__no">01</span>
+                <span>2025</span>
               </div>
-              <div class="card__body">
-                <div class="card__top">
-                  <span class="card__index">01</span>
-                  <span class="card__year">2025</span>
-                </div>
-                <h3 class="card__title">
-                  <a href="work/brs.html">Barbershop Reservation System</a>
-                </h3>
-                <p class="card__desc">
-                  Walk-in booking moved online: customer and admin dashboards
+              <h3 class="quest__title">
+                <a href="work/brs.html">Barbershop Reservation System</a>
+              </h3>
+              <p class="quest__desc">
+                Walk-in booking moved online: customer and admin dashboards
                   on one booking schema.
-                </p>
-                <ul class="card__tags">
+              </p>
+              <ul class="chips">
                   <li>PHP</li>
                   <li>MySQL</li>
                   <li>HTML / CSS</li>
-                </ul>
-                <span class="card__arrow" aria-hidden="true">→</span>
-              </div>
-            </article>
+              </ul>
+            </div>
+            <span class="quest__arrow" aria-hidden="true">→</span>
+          </article>
 
-            <article class="card">
-              <div class="card__media">
-                <img
-                  src="assets/work/waqafer.svg"
-                  alt="Placeholder artwork for Waqafer"
-                  width="800"
-                  height="500"
-                  loading="lazy"
-                />
+            <article class="quest">
+            <div class="quest__media">
+              <img
+                src="assets/work/waqafer.svg"
+                alt="Pixel-art cover: Islamic geometric star pattern"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="quest__body">
+              <div class="quest__top">
+                <span class="quest__no">02</span>
+                <span>2025–2026</span>
               </div>
-              <div class="card__body">
-                <div class="card__top">
-                  <span class="card__index">02</span>
-                  <span class="card__year">2025–2026</span>
-                </div>
-                <h3 class="card__title">
-                  <a href="work/waqafer.html">Waqafer</a>
-                </h3>
-                <p class="card__desc">
-                  Prayer times, qiblah, nearby mosques, Quran and Hadith in one
+              <h3 class="quest__title">
+                <a href="work/waqafer.html">Waqafer</a>
+              </h3>
+              <p class="quest__desc">
+                Prayer times, qiblah, nearby mosques, Quran and Hadith in one
                   companion app.
-                </p>
-                <ul class="card__tags">
+              </p>
+              <ul class="chips">
                   <li>Flutter</li>
                   <li>Dart</li>
                   <li>Google Maps</li>
-                </ul>
-                <span class="card__arrow" aria-hidden="true">→</span>
-              </div>
-            </article>
+              </ul>
+            </div>
+            <span class="quest__arrow" aria-hidden="true">→</span>
+          </article>
 
-            <article class="card card--wide">
-              <div class="card__media">
-                <img
-                  src="assets/work/pretzel.svg"
-                  alt="Placeholder artwork for Pretzel"
-                  width="800"
-                  height="500"
-                  loading="lazy"
-                />
+            <article class="quest">
+            <div class="quest__media">
+              <img
+                src="assets/work/pretzel.svg"
+                alt="Pixel-art cover: market stall with a striped awning, stacked books and a hanging pretzel sign"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="quest__body">
+              <div class="quest__top">
+                <span class="quest__no">03</span>
+                <span>2025</span>
               </div>
-              <div class="card__body">
-                <div class="card__top">
-                  <span class="card__index">03</span>
-                  <span class="card__year">2025</span>
-                </div>
-                <h3 class="card__title">
-                  <a href="work/pretzel.html">Pretzel</a>
-                </h3>
-                <p class="card__desc">
-                  A second-hand textbook marketplace with listings, chat,
+              <h3 class="quest__title">
+                <a href="work/pretzel.html">Pretzel</a>
+              </h3>
+              <p class="quest__desc">
+                A second-hand textbook marketplace with listings, chat,
                   wishlist and checkout, modelled on Firebase.
-                </p>
-                <ul class="card__tags">
+              </p>
+              <ul class="chips">
                   <li>Flutter</li>
                   <li>Firebase</li>
                   <li>Firestore</li>
-                </ul>
-                <span class="card__arrow" aria-hidden="true">→</span>
-              </div>
-            </article>
+              </ul>
+            </div>
+            <span class="quest__arrow" aria-hidden="true">→</span>
+          </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--screen">
+        <span class="doodle doodle--star doodle--a doodle--mint" aria-hidden="true"></span>
+        <span class="doodle doodle--diamond doodle--d doodle--peach" aria-hidden="true"></span>
         <div class="container">
           <div class="stats" data-reveal>
             <article class="stat">
@@ -324,10 +402,26 @@
               </p>
             </article>
           </div>
+
+          <div class="gh" hidden>
+            <div class="gh__head">
+              <span class="board__live">
+                <span class="status__dot" aria-hidden="true"></span>
+                activity monitor
+              </span>
+              <span>push events · last 12 weeks</span>
+            </div>
+            <div
+              class="gh__grid"
+              role="img"
+              aria-label="GitHub push activity loading"
+            ></div>
+          </div>
         </div>
       </section>
 
       <section class="section">
+        <span class="doodle doodle--diamond doodle--c doodle--rose" aria-hidden="true"></span>
         <div class="container split">
           <div class="prose" data-reveal>
             <p>
@@ -399,12 +493,12 @@
       </section>
     </main>
 
-    <footer class="foot">
+        <footer class="foot">
       <div class="container foot__inner">
-        <div class="foot__brand">
-          <span class="wordmark">Adam HJ</span>
-          <p>Computer networks student · Petaling Jaya, Malaysia</p>
-        </div>
+        <p class="foot__status">
+          <span class="status__dot" aria-hidden="true"></span>
+          © <span data-year>2026</span> Adam HJ · Petaling Jaya
+        </p>
         <nav class="foot__links" aria-label="Footer">
           <a
             class="foot__link"
@@ -422,7 +516,7 @@
           >
           <a class="foot__link" href="contact.html">Email</a>
         </nav>
-        <p class="foot__meta">© <span data-year>2026</span> Adam HJ</p>
+        <p class="foot__meta">Hand-built · no frameworks</p>
       </div>
     </footer>
 

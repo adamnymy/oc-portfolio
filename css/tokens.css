@@ -1,76 +1,239 @@
+/* ==========================================================================
+   Design tokens — cozy "Cloud" pixel theme
+
+   Single source of truth for color, type, space, borders, shadows, motion and
+   pixel patterns. Components reference semantic tokens only — raw hex values
+   live here and nowhere else.
+
+   Theme model: warm day palette on :root, warm plum night palette on
+   :root[data-theme="night"].
+   ========================================================================== */
+
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* 60% — dark grey-green ground */
-  --color-ground: #232c27;
-  --color-ground-2: #2a342e;
-  --color-ground-3: #323d36;
-  --color-ground-glass: rgba(35, 44, 39, 0.88);
-  --color-ground-soft: rgba(35, 44, 39, 0.04);
-  --color-ground-faint: rgba(35, 44, 39, 0.03);
-  --color-overlay: rgba(17, 22, 19, 0.72);
+  /* ------------------------------------------------------------------
+     Raw palette — day (warm cloud)
+     ------------------------------------------------------------------ */
+  --cloud-0: #faf7ee;
+  --cloud-1: #f2ecdd;
+  --cloud-2: #e4dcc6;
+  --sky-1: #b7cce6;
+  --sky-2: #8fb0d6;
+  --sky-3: #6c90bc;
+  --sky-4: #4a6e9e;
+  --ink-0: #2b2a33;
+  --ink-1: #4a4756;
+  --ink-2: #67626f;
+  --sun-0: #f6c453;
+  --sun-1: #fce3a6;
+  --sun-2: #7e5a12;
+  --peach-0: #f2a47e;
+  --mint-0: #a8d8b9;
+  --violet-1: #cbb9e8;
+  --violet-2: #8f78c0;
+  --rose-1: #f7cdd6;
+  --rose-2: #d97c96;
+  --teal-1: #aadfd8;
+  --teal-2: #55a79a;
+  --screen-0: #2e2940;
+  --screen-text: #f2e9d8;
 
-  /* 30% — soft bone white */
-  --color-bone: #f0ebdd;
-  --color-bone-2: #e6dfcd;
-  --color-bone-muted: #c9c4b6;
-  --color-bone-soft: rgba(240, 235, 221, 0.66);
-  --color-line: rgba(240, 235, 221, 0.16);
-  --color-line-strong: rgba(240, 235, 221, 0.34);
-  --color-on-bone: #232c27;
-  --color-on-bone-muted: rgba(35, 44, 39, 0.72);
-  --color-line-on-bone: rgba(35, 44, 39, 0.18);
+  /* ------------------------------------------------------------------
+     Semantic — surfaces & text (day)
+     ------------------------------------------------------------------ */
+  --color-ground: var(--cloud-0);
+  --color-ground-2: var(--cloud-1);
+  --color-ground-glass: rgba(250, 247, 238, 0.88);
+  --color-ground-soft: rgba(43, 42, 51, 0.05);
+  --color-ground-faint: rgba(43, 42, 51, 0.03);
 
-  /* 10% — soft yellow accent */
-  --color-yellow: #e8d98f;
-  --color-yellow-2: #f1e6ad;
-  --color-yellow-ink: #232c27;
-  --color-yellow-soft: rgba(232, 217, 143, 0.18);
-  --color-yellow-line: rgba(232, 217, 143, 0.5);
+  --color-bone: var(--ink-0);
+  --color-bone-2: var(--ink-1);
+  --color-bone-muted: var(--ink-2);
+  --color-bone-soft: rgba(43, 42, 51, 0.78);
+  --color-line: rgba(43, 42, 51, 0.16);
+  --color-line-strong: rgba(43, 42, 51, 0.34);
+  --color-on-bone: var(--cloud-0);
 
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system,
+  /* Parchment panels (stats, contact, facts) — day */
+  --color-panel: var(--cloud-1);
+  --color-panel-2: var(--cloud-2);
+  --color-on-panel: var(--ink-0);
+  --color-on-panel-muted: var(--ink-2);
+  --color-line-on-panel: rgba(43, 42, 51, 0.2);
+
+  /* Twilight screens (signal map, case frames) — identical in both themes */
+  --color-screen: var(--screen-0);
+  --color-on-screen: var(--screen-text);
+  --color-on-screen-muted: rgba(242, 233, 216, 0.7);
+  --color-on-screen-faint: rgba(242, 233, 216, 0.14);
+  --color-line-on-screen: rgba(242, 233, 216, 0.18);
+  --color-veil: rgba(43, 42, 51, 0.62);
+
+  --color-yellow: var(--sun-0);
+  --color-yellow-2: var(--sun-1);
+  --color-yellow-text: var(--sun-2);
+  --color-yellow-ink: var(--ink-0);
+  --color-yellow-soft: rgba(246, 196, 83, 0.34);
+  --color-yellow-line: rgba(126, 90, 18, 0.5);
+  --color-beacon: var(--peach-0);
+  --color-sky: var(--sky-3);
+  --color-mint: var(--mint-0);
+  --color-violet: var(--violet-2);
+  --color-rose: var(--rose-2);
+  --color-teal: var(--teal-2);
+  --color-scroll: var(--sky-3);
+
+  /* ------------------------------------------------------------------
+     Typography
+     ------------------------------------------------------------------ */
+  --font-display: "Pixelify Sans", "DotGothic16", ui-sans-serif, system-ui,
     sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo,
-    monospace;
+  --font-mono: "Silkscreen", "Courier New", ui-monospace, monospace;
+  --font-body: "DotGothic16", ui-sans-serif, system-ui, sans-serif;
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-md: 1.125rem;
-  --text-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --text-xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
-  --text-2xl: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem);
-  --text-3xl: clamp(3rem, 1.55rem + 6.4vw, 6rem);
+  --text-xs: 0.7rem;
+  --text-sm: 0.85rem;
+  --text-base: 0.95rem;
+  --text-md: 1.05rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.55rem;
+  --text-2xl: clamp(1.9rem, 4vw, 2.9rem);
+  --text-3xl: clamp(2.6rem, 6.5vw, 5rem);
+
+  /* ------------------------------------------------------------------
+     Layout & space
+     ------------------------------------------------------------------ */
+  --container-width: 74rem;
+  --nav-h: 4.25rem;
 
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
-  --space-xl: 2.5rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  --space-4xl: 8rem;
+  --space-xl: 2.25rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 5.5rem;
 
-  --radius-sm: 8px;
-  --radius: 14px;
-  --radius-lg: 22px;
-  --radius-pill: 999px;
+  /* ------------------------------------------------------------------
+     Borders, radii, shadows
+     ------------------------------------------------------------------ */
+  --bw: 2px;
+  --bw-heavy: 3px;
 
-  --shadow-card: inset 0 1px 0 rgba(240, 235, 221, 0.05),
-    0 18px 40px -24px rgba(0, 0, 0, 0.7);
-  --shadow-lift: inset 0 1px 0 rgba(240, 235, 221, 0.08),
-    0 30px 60px -28px rgba(0, 0, 0, 0.85);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-pill: 0;
 
-  --measure: 62ch;
-  --measure-wide: 72ch;
-  --nav-h: 4.5rem;
-  --reveal-delay: 0ms;
+  --shadow-chip: 2px 2px 0 rgba(43, 42, 51, 0.18);
+  --shadow-card: 3px 3px 0 rgba(43, 42, 51, 0.22);
+  --shadow-lift: 6px 6px 0 rgba(43, 42, 51, 0.28);
+  --shine: inset 0 1px 0 rgba(255, 255, 255, 0.55);
 
-  --dur-fast: 140ms;
-  --dur: 220ms;
-  --dur-slow: 420ms;
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* ------------------------------------------------------------------
+     Pixel patterns
+     ------------------------------------------------------------------ */
+  --pattern-check: repeating-conic-gradient(
+    rgba(43, 42, 51, 0.045) 0% 25%,
+    transparent 0% 50%
+  );
+  --pattern-dither: repeating-conic-gradient(
+    rgba(108, 144, 188, 0.22) 0% 25%,
+    transparent 0% 50%
+  );
+  --scanline: repeating-linear-gradient(
+    0deg,
+    rgba(12, 10, 20, 0.22) 0 1px,
+    transparent 1px 3px
+  );
+
+  /* ------------------------------------------------------------------
+     Motion
+     ------------------------------------------------------------------ */
+  --dur-fast: 130ms;
+  --dur: 260ms;
+  --dur-slow: 480ms;
+  --dur-blink: 1.2s;
+  --dur-beacon: 2.6s;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-steps: steps(3, end);
+}
+
+/* ==========================================================================
+   Night theme — warm plum
+   ========================================================================== */
+
+:root[data-theme="night"] {
+  color-scheme: dark;
+
+  --color-ground: #211e2e;
+  --color-ground-2: #2a2638;
+  --color-ground-glass: rgba(33, 30, 46, 0.88);
+  --color-ground-soft: rgba(242, 233, 216, 0.05);
+  --color-ground-faint: rgba(242, 233, 216, 0.03);
+
+  --color-bone: #f2e9d8;
+  --color-bone-2: #e0d5bd;
+  --color-bone-muted: #a79fb5;
+  --color-bone-soft: rgba(242, 233, 216, 0.78);
+  --color-line: rgba(242, 233, 216, 0.16);
+  --color-line-strong: rgba(242, 233, 216, 0.34);
+  --color-on-bone: var(--ink-0);
+
+  /* Parchment becomes plum at night */
+  --color-panel: #2a2638;
+  --color-panel-2: #332e44;
+  --color-on-panel: #f2e9d8;
+  --color-on-panel-muted: #a79fb5;
+  --color-line-on-panel: rgba(242, 233, 216, 0.16);
+
+  /* Screens keep their twilight indigo (inherited from :root) */
+
+  --color-yellow: var(--sun-0);
+  --color-yellow-2: var(--sun-1);
+  --color-yellow-text: var(--sun-0);
+  --color-yellow-ink: #211e2e;
+  --color-yellow-soft: rgba(246, 196, 83, 0.18);
+  --color-yellow-line: rgba(246, 196, 83, 0.5);
+  --color-sky: var(--sky-2);
+  --color-mint: var(--mint-0);
+  --color-violet: var(--violet-1);
+  --color-rose: var(--rose-1);
+  --color-teal: var(--teal-1);
+  --color-scroll: #5a5470;
+
+  --shadow-chip: 2px 2px 0 rgba(8, 6, 14, 0.5);
+  --shadow-card: 3px 3px 0 rgba(8, 6, 14, 0.55);
+  --shadow-lift: 6px 6px 0 rgba(8, 6, 14, 0.7);
+  --shine: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  --pattern-check: repeating-conic-gradient(
+    rgba(242, 233, 216, 0.035) 0% 25%,
+    transparent 0% 50%
+  );
+  --pattern-dither: repeating-conic-gradient(
+    rgba(143, 176, 214, 0.16) 0% 25%,
+    transparent 0% 50%
+  );
+}
+
+/* ==========================================================================
+   Small screens — tighter type scale
+   ========================================================================== */
+
+@media (max-width: 48rem) {
+  :root {
+    --text-xs: 0.68rem;
+    --text-sm: 0.8rem;
+    --text-base: 0.92rem;
+    --text-md: 1rem;
+    --text-lg: 1.1rem;
+    --text-xl: 1.4rem;
+    --text-2xl: clamp(1.7rem, 7vw, 2.3rem);
+    --text-3xl: clamp(2.1rem, 10vw, 3.2rem);
+  }
 }
